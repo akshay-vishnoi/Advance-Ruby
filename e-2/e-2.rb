@@ -1,10 +1,13 @@
 str = []
-puts "\n\tEnter code to run. After that press enter 2 times to see the output\n\n"
+puts "\n\t********Enter code to run. After that press enter to see the output********\n\n"
 loop do  
   str << gets
-  if (str[str.size-1] === "\n" && str[str.size - 2] === "\n")
-    puts eval str.join
+  case str[str.size - 1].gsub(/[\s]/i, "")
+  when ""
+      puts eval str.join
+      str = []
+  when "q"
+    puts "****Thank you for using it****"
     break;
   end
 end
-  
