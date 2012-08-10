@@ -2,7 +2,7 @@ class FunctionCreate
   def memoize(method, func_stat)
     self.class.class_eval do
       return define_method(method) do
-        eval func_stat
+        eval(func_stat)
       end
     end
   end
