@@ -11,7 +11,7 @@ class DerivedString < String
       occurences[answer_alpha.to_sym] += 1 if answer_alpha != " "
     end
     occurences.each do |key, value|
-    puts "#{key}'s count is #{value}"
+      puts "#{key}'s count is #{value}"
     end
   end
 end
