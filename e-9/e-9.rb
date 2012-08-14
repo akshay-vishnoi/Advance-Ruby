@@ -3,7 +3,6 @@ module MyModule
     klass.class_eval do
       def klass.chained_aliasing(*args)
         pub = self.new.public_methods - Object.public_methods
-        protect = self.new.protected_methods - Object.protected_methods
         priv = self.new.private_methods - Object.private_methods
         args.each do |func|
           if(pub.include? func)
