@@ -48,6 +48,17 @@ module Filters
   end
 end
 
+
+
+
+
+
+
+
+
+
+
+
 #class definition
 class Sample
   include Filters
@@ -63,10 +74,17 @@ class Sample
   def main_function
     puts "in main_function"
   end
-  after_filter :test_method, :only => [:main_function]
-  before_filter :foo, :bar, :only => [:main_function]
+  def tt
+    puts "in tt"
+
+  end
+  after_filter :test_method
+  before_filter :foo
+
+
 end
 
 #main
 s = Sample.new
 s.main_function
+
