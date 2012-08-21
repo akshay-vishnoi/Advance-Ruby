@@ -1,5 +1,5 @@
 class FunctionCreate
-  def memoize(method, func_stat)
+  def func_create(method, func_stat)
     self.class.class_eval do
       return define_method(method) do
         eval(func_stat)
@@ -14,5 +14,5 @@ puts "\nEnter 1-line statement for function"
 func_statement = gets.chomp
 puts "\nCalling method: #{func_name}()\n"
 obj = FunctionCreate.new
-func_call = obj.memoize(func_name, func_statement)
+func_call = obj.func_create(func_name, func_statement)
 func_call.call
