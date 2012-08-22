@@ -14,9 +14,11 @@ class ShoppingList
     @quantity = q
   end
   def to_s
+    item_array = []
     @item.each_key do |key|
-        puts "#{key.ljust(20, '.')}#{@item[key]}"
+        item_array << "#{key.ljust(20, '.')}#{@item[key]}"
       end
+    item_array.join("\n")
   end
   
 end

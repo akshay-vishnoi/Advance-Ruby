@@ -5,5 +5,5 @@ sl.item { |i| i.name("Toothpaste"); i.quantity(3) }
 sl.item { |i| i.name("Computer"); i.quantity(1) }
 sl.item { |i| i.name("Toothpaste"); i.quantity(3) }
 sl.item { |i| i.name("Computer"); i.quantity(8) }
-sl.item { |i| i.name("Pensil"); i.quantity(3) }
+sl.item { |i| i.name("Pencil"); i.quantity(3) }
 puts sl
