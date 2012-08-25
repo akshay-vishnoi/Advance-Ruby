@@ -2,23 +2,18 @@ class ShoppingList
   def initialize
     @item = {}
   end
-  def item    
-    yield self
-    @item[@name] ||= 0
-    @item[@name] += @quantity
+  def items(&block)
+    instance_eval &block
   end
-  def name(n)
-    @name = n
-  end
-  def quantity(q)
-    @quantity = q
+  def add(name, quantity)
+    @item[name] ||= 0
+    @item[name] += quantity
   end
   def to_s
     item_array = []
-    @item.each_key do |key|
-        item_array << "#{key.ljust(20, '.')}#{@item[key]}"
-      end
-    item_array.join("\n")
+    @item.each do |key, value|
+      item_array << "#{key.ljust(20, '.')}#{value}"
+    end
+    item_array.join("\n");
   end
-  
 end
