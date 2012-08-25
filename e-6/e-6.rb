@@ -1,9 +1,9 @@
 class DerivedString < String
   def exclude?(pattern)
-    puts self.match(pattern) ? true : false
+    self.match(pattern) ? true : false
   end
   def palindrome?
-    puts  self == self.reverse ? true : false
+    self == self.reverse
   end
   def character_occurence
     occurences = Hash.new(0)
@@ -13,6 +13,7 @@ class DerivedString < String
     occurences.each do |key, value|
       puts "#{key}'s count is #{value}"
     end
+    print
   end
 end
 
@@ -22,4 +23,4 @@ derived_string = instance_eval object_name
 print "New String is created with value: #{derived_string}\n" 
 
 puts "Call a Method('exclude?(pattern)', 'palindrome?', 'character_occurence'): "
-instance_eval "derived_string." + gets.chomp
+instance_eval "print derived_string." + gets.chomp
